@@ -1,9 +1,31 @@
 import React from 'react'
+import store from './store/store'
+import { connect } from 'react-redux'
+import { increment, decrement } from './store/actions'
 
-const App = () => {
+const App = ({ state, dispatch }) => {
+    const handleIncrement = () => {
+        console.log('hi')
+        dispatch(increment())
+    }
+
+    const handleDecrement = () => {
+        dispatch(decrement())
+    }
     return(
-        <p>Hello World</p>
+        <div>
+            <div>
+                {state}
+            </div>
+            <button onClick={handleIncrement}>plus</button>
+            <button onClick={handleDecrement}>minus</button>
+        </div>
     )
 }
 
-export default App
+const mapStateToProps = state => ({
+    state
+})
+
+
+export default connect(mapStateToProps)(App)
