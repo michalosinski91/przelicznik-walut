@@ -1,21 +1,20 @@
 import React from 'react'
-import store from './store/store'
 import { connect } from 'react-redux'
 import { increment, decrement } from './store/actions'
 
-const App = ({ state, dispatch }) => {
+const App = ({ counter, increment, decrement }) => {
     const handleIncrement = () => {
-        console.log('hi')
-        dispatch(increment())
+        console.log(counter)
+        increment()
     }
 
     const handleDecrement = () => {
-        dispatch(decrement())
+        decrement()
     }
     return(
         <div>
             <div>
-                {state}
+                {counter}
             </div>
             <button onClick={handleIncrement}>plus</button>
             <button onClick={handleDecrement}>minus</button>
@@ -23,9 +22,16 @@ const App = ({ state, dispatch }) => {
     )
 }
 
-const mapStateToProps = state => ({
-    state
-})
+const mapStateToProps = state => {
+    return {
+        counter: state.counter
+    }
+}
+
+const matchDispatchToProps = {
+    increment,
+    decrement
+}
 
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, matchDispatchToProps)(App)

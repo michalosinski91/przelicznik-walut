@@ -1,13 +1,21 @@
-const reducer = (state = 0, action) => {
+const initialState = {
+    counter: 0,
+    transactions: [],
+    exchangeRate: 0
+}
+
+const reducer = (state = initialState, action) => {
     console.log('state now: ', state)
     console.log('action: ', action)
     switch (action.type) {
         case 'INCREMENT':
-            console.log('increment')
-            return state + 1
+            return {
+                ...state, counter: state.counter + 1
+            }
         case 'DECREMENT':
-            console.log('decrement')
-            return state - 1
+            return {
+                ...state, counter: state.counter - 1
+            }
         default:
             return state
     }
