@@ -1,9 +1,3 @@
-/*export const updateExchangeRate = data => ({
-    type: 'UPDATE_EXCHANGE_RATE',
-    data
-})
-*/
-
 export const addTransaction = data => ({
     type: 'ADD_TRANSACTION',
     data

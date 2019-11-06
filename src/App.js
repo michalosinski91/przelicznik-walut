@@ -10,22 +10,17 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
     const [euroAmount, setEuroAmount] = useState(0)
     const [transactionId, setTransactionId] = useState(1)
 
-    const handleUpdateExchangeRate = event => {
-        event.preventDefault()
-        console.log('clicked exchange rate')
-    }
-
     const maxAmount = transactions.reduce((prev, current) => (prev.euroAmount > current.euroAmount) ? prev : current, 1)
-
+    const totalAmountEUR = transactions.reduce((acc, current) => (acc + current.euroAmount), 0)
+    const totalAmountPLN = transactions.reduce((acc, current) => (acc + current.euroAmount*euroExchangeRate), 0)
+    
     const handleAddTransaction = event => {
         event.preventDefault()
         let id = transactionId
-        const plnAmount = euroAmount*euroExchangeRate
         const content = {
             id,
             description,
             euroAmount,
-            plnAmount,
         }
         addTransaction(content)
         id++
@@ -39,26 +34,33 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
         <div>
             <div>
                 <form onSubmit={event => handleUpdateExchangeRate(event)}>
+                    <label>Kurs wymiany</label>
                     <input type="number" step="0.01" name="exchangeRate" value={euroExchangeRate} onChange={({target}) => setEuroExchangeRate(target.value)} />
-                    <button type="submit">Aktualizuj Wszystkie Transakcje</button>
                 </form>
             </div>
             <div>
                 <form onSubmit={event => handleAddTransaction(event)}>
+                    <label>Opis</label>
                     <input type="text" name="description" value={description} onChange={({target}) => setDescription(target.value)} />
+                    <label>Kwota Euro</label>
                     <input type="number" step="0.01" name="euroAmount" value={euroAmount} onChange={({target}) => setEuroAmount(target.value)} />
                     <button type="submit">Dodaj</button>
                 </form>
             </div>
             <div>
+                <p>Lista transakcji</p>
                 {transactions 
-                ? transactions.map(transaction => <Transaction key={transaction.id} transaction={transaction} removeTransaction={removeTransaction} />)
+                ? transactions.map(transaction => <Transaction key={transaction.id} transaction={transaction} removeTransaction={removeTransaction} euroExchangeRate={euroExchangeRate} />)
                 : null
                 }
             </div>
             <div>
                 <p>Najwyższa kwota:</p>
-                {`${maxAmount.description}, ${maxAmount.euroAmount} euro, ${maxAmount.plnAmount} złotych`}
+                {`${maxAmount.description}, ${maxAmount.euroAmount} euro, ${maxAmount.euroAmount*euroExchangeRate} złotych`}
+            </div>
+            <div>
+                <p>Suma transakcji</p>
+                {`${Number(totalAmountEUR)} euro / ${totalAmountPLN} złotych`}
             </div>
         </div>
     )
@@ -72,7 +74,7 @@ const mapStateToProps = state => {
 
 const matchDispatchToProps = {
     addTransaction,
-    removeTransaction
+    removeTransaction,
 }
 
 
