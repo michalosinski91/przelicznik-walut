@@ -20,7 +20,7 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
         const content = {
             id,
             description,
-            euroAmount,
+            euroAmount: parseFloat(euroAmount).toFixed(2),
         }
         addTransaction(content)
         id++
@@ -56,11 +56,11 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
             </div>
             <div>
                 <p>Najwyższa kwota:</p>
-                {`${maxAmount.description}, ${maxAmount.euroAmount} euro, ${maxAmount.euroAmount*euroExchangeRate} złotych`}
+                {`${maxAmount.description}, ${maxAmount.euroAmount} euro, ${(maxAmount.euroAmount*euroExchangeRate).toFixed(2)} złotych`}
             </div>
             <div>
                 <p>Suma transakcji</p>
-                {`${Number(totalAmountEUR)} euro / ${totalAmountPLN} złotych`}
+                {`${Number(totalAmountEUR)} euro / ${totalAmountPLN.toFixed(2)} złotych`}
             </div>
         </div>
     )
