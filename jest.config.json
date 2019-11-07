@@ -1,0 +1,6 @@
+{
+    "name": "przelicznik walut",
+    "verbose": true,
+    "testRegex": "((\\.|/*.)(test))\\.js?$",
+    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
+}
