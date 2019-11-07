@@ -10,11 +10,12 @@ const NewTransactionForm = ({ handleAddTransaction }) => {
     }
 
     return(
-        <div className='container'>
+        <div className='container large'>
+            <h3>Nowa transakcja</h3>
             <form className='form' 
                 onSubmit={event => handleAddTransaction(event, description, euroAmount, handleFormClear)}
             >
-                Nowa transakcja o nazwie 
+                <label>Nazwa:</label>
                 <input 
                     className="text-input"
                     type="text" 
@@ -22,7 +23,7 @@ const NewTransactionForm = ({ handleAddTransaction }) => {
                     value={description} 
                     onChange={({ target }) => setDescription(target.value)}
                 />
-                na kwotę
+                <label>Kwota: </label>
                 <input
                     type="number" 
                     step="0.01" 

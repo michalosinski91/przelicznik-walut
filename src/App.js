@@ -5,9 +5,8 @@ import { addTransaction, removeTransaction } from './store/actions'
 import Header from './components/Header'
 import ExchangeRateForm from './components/ExchangeRateForm'
 import NewTransactionForm from './components/NewTransactionForm'
-import HighestAmountDisplay from './components/HighestAmountDisplay'
-import TotalAmountDisplay from './components/TotalAmountDisplay'
 import TransactionList from './components/TransactionList'
+import Aside from './components/Aside'
 import Message from './components/Message'
 
 const App = ({ transactions, addTransaction, removeTransaction }) => {
@@ -67,20 +66,20 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
                         handleAddTransaction={handleAddTransaction} 
                     />
                 </div>
-                <TransactionList 
-                    transactions={transactions} 
-                    removeTransaction={removeTransaction} 
-                    euroExchangeRate={euroExchangeRate} 
-                />
-                <TotalAmountDisplay 
-                    totalAmountEUR={totalAmountEUR} 
-                    totalAmountPLN={totalAmountPLN}
-                />
-                <HighestAmountDisplay 
-                    description={maxAmountEUR.description} 
-                    euroAmount={maxAmountEUR.euroAmount} 
-                    plnAmount={maxAmountPLN} 
-                />
+                <div className='container-flex'>
+                    <Aside 
+                        totalAmountEUR={totalAmountEUR} 
+                        totalAmountPLN={totalAmountPLN}
+                        description={maxAmountEUR.description} 
+                        euroAmount={maxAmountEUR.euroAmount} 
+                        plnAmount={maxAmountPLN} 
+                    />
+                    <TransactionList 
+                        transactions={transactions} 
+                        removeTransaction={removeTransaction} 
+                        euroExchangeRate={euroExchangeRate} 
+                    />
+                </div>
                 <Message errorMessage={errorMessage} successMessage={successMessage} />
             </div>
         </div>

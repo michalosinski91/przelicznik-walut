@@ -4,6 +4,7 @@ const ExchangeRateForm = ({ euroExchangeRate, setEuroExchangeRate }) => {
 
     return(
         <div className='container small'>
+            <h3>Kurs</h3>
             <form className='form'>
                 1 Euro =
                 <input 

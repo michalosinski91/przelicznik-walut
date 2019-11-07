@@ -3,7 +3,7 @@ import Transaction from './Transaction'
 
 const TransactionList = ({ transactions, removeTransaction, euroExchangeRate }) => {
     return(
-        <div>
+        <div className='container large'>
             <h3>Lista Transakcji</h3>
             {transactions.map(transaction => <Transaction
                 key={transaction.id}
