@@ -95,6 +95,10 @@ header {
     .container.large {
         flex-basis: 200%;
     }
+
+    .small {
+        height: 100px;
+    }
     .aside {
         flex-direction: column;
         justify-content: center;
@@ -137,19 +141,35 @@ tr:hover {
 
 /* Form  */
 
+.input-container {
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-field {
+    margin: 16px 0;
+}
+
+.form-field label {
+    float: left;
+}
+
+.form-field input {
+    float: right;
+}
+
 .form input {
     margin: 0 6px;
-    width: 125px;
+    width: 200px;
     font-size: 1em;
     color: #2626A3;
     font-weight: 600;
     text-align: center;
     border: none;
     border-bottom: 2px #2626A3 solid;
-}
-
-.form input[type=text] {
-    width: 250px;
 }
 
 .form input:focus,
@@ -194,6 +214,8 @@ input[type=number] {
 
 .positive {
     background-color: #0d0d64;
+    margin-top: 12px;
+    padding: 8px 24px;
 }
 
 .button.positive:hover {

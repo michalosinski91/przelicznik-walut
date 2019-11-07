@@ -15,23 +15,28 @@ const NewTransactionForm = ({ handleAddTransaction }) => {
             <form className='form' 
                 onSubmit={event => handleAddTransaction(event, description, euroAmount, handleFormClear)}
             >
-                <label>Nazwa:</label>
-                <input 
-                    className="text-input"
-                    type="text" 
-                    name="description" 
-                    value={description} 
-                    onChange={({ target }) => setDescription(target.value)}
-                />
-                <label>Kwota: </label>
-                <input
-                    type="number" 
-                    step="0.01" 
-                    name="euroAmount"
-                    value={euroAmount}
-                    onChange={({ target }) => setEuroAmount(target.value)}
-                />
-                Euro
+                <div className='input-container'>
+                    <div className='form-field'>
+                        <label>Nazwa transakcji:</label>
+                        <input 
+                            className="text-input"
+                            type="text" 
+                            name="description" 
+                            value={description} 
+                            onChange={({ target }) => setDescription(target.value)}
+                        />
+                    </div>
+                    <div className='form-field'>
+                        <label>Kwota w Euro:</label>
+                        <input
+                            type="number" 
+                            step="0.01" 
+                            name="euroAmount"
+                            value={euroAmount}
+                            onChange={({ target }) => setEuroAmount(target.value)}
+                        />
+                    </div>
+                </div>
                 <button className="button positive" type="submit">Dodaj</button>
             </form>
         </div>
