@@ -7,7 +7,7 @@ const Transaction = ({ transaction, removeTransaction, euroExchangeRate }) => {
     return (
         <div>
             {`${transaction.description} - ${transaction.euroAmount} euro = ${(transaction.euroAmount*euroExchangeRate).toFixed(2)} złotych`}
-            <button onClick={handleRemoveTransaction}>Usuń</button>
+            <button className='button negative' onClick={handleRemoveTransaction}>Usuń</button>
         </div>
     )
 }

@@ -56,6 +56,47 @@ h1 {
 }
 
 
+.button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 12px 24px;
+    font-size: 1em;
+    color: white;
+	background-color:#546e7a;
+    text-decoration: none;
+    border: transparent;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px 0px #a3a3a3;
+    user-select: none;
+}
+
+.button:active {
+    position: relative;
+    top: 2px;
+    box-shadow: none;
+}
+
+.positive {
+    background-color: #0d0d64;
+}
+
+.button.positive:hover {
+    background-color:#2626a3;
+}
+
+.negative {
+    background-color: #B5090D;
+}
+
+.button.negative:hover {
+    background-color: #E7171C;
+}
+
+
+
+
 
 
 /* remove default form button styling */
