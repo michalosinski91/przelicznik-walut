@@ -3,7 +3,7 @@ import React from 'react'
 const HighestAmountDisplay = ({ description, euroAmount, plnAmount }) => {
     return(
         <div>
-            <p>Największa transakcja:</p>
+            <h3>Największa transakcja:</h3>
             {`${description} - ${euroAmount} euro / ${plnAmount} złotych`}
         </div>
     )

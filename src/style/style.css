@@ -5,24 +5,47 @@ body {
     box-sizing: border-box;
 }
 
+/* Banner */
+
 header {
-    background: #2626A3;
-    margin: 0;
-    height: 150px;
-    width: 100%;
-    text-align: center;
+    background-color: #2626A3;
+    background-image: url(https://res.cloudinary.com/dke68lmlo/image/upload/q_30/v1573135017/layouts/banner-image-min.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 2em 0;
 }
 
-h1 {
-    color: #FFFFFF;
-    margin: 0;
-    padding: 1em;
-    font-size: 3em;
-    font-weight: 800;
+.banner-overlay {
+    position: absolute;
+    background-color: #2626A3;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+    top: 0;
+    left: 0;
+}
+
+.banner-container {
+    max-width: 1100px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 5%;
+    color: white
+}
+
+.banner-text {
+    margin-bottom: 3em;
+}
+
+.banner-text h1 {
+    font-size: 2em
 }
 
 .wrapper {
-    max-width: 960px;
+    max-width: 1280px;
     height: 100%;
     margin: 1em auto;
     color: #2626A3;
@@ -33,6 +56,20 @@ h1 {
     width: 100%;
     text-align: center;
     font-size: 1em;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 1200px) {
+    .container-flex {
+        flex-direction: row-reverse;
+    }
+    .small {
+        max-width: 300px;
+    }
 }
 
 .form input {

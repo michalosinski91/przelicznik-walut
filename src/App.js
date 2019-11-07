@@ -58,13 +58,15 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
         <div>
             <Header />
             <div className='wrapper'>
-                <ExchangeRateForm 
-                    euroExchangeRate={euroExchangeRate}
-                    setEuroExchangeRate={setEuroExchangeRate}
-                />
-                <NewTransactionForm 
-                    handleAddTransaction={handleAddTransaction} 
-                />
+                <div className='container-flex'>
+                    <ExchangeRateForm 
+                        euroExchangeRate={euroExchangeRate}
+                        setEuroExchangeRate={setEuroExchangeRate}
+                    />
+                    <NewTransactionForm 
+                        handleAddTransaction={handleAddTransaction} 
+                    />
+                </div>
                 <TransactionList 
                     transactions={transactions} 
                     removeTransaction={removeTransaction} 

@@ -4,7 +4,7 @@ import Transaction from './Transaction'
 const TransactionList = ({ transactions, removeTransaction, euroExchangeRate }) => {
     return(
         <div>
-            <p>Lista Transakcji</p>
+            <h3>Lista Transakcji</h3>
             {transactions.map(transaction => <Transaction
                 key={transaction.id}
                 transaction={transaction}
