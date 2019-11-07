@@ -118,13 +118,14 @@ header {
 /* Table */
 
 .table {
+    margin: 0 auto;
     width: 100%;
     padding: 12px;
     border-collapse: collapse;
 }
 
 td {
-    padding: 8px;
+    padding: 8px 0;
     border: none;
 }
 
@@ -132,6 +133,9 @@ tr:hover {
     background-color: rgba(38, 38, 163, 0.3);
 }
 
+.wide {
+    width: 30%;
+}
 
 .right {
     text-align: right;

@@ -10,7 +10,7 @@ const TransactionList = ({ transactions, removeTransaction, euroExchangeRate }) 
             : <table className='table'>
                 <tbody>
                     <tr>
-                        <th>Nazwa</th>
+                        <th className='wide'>Nazwa</th>
                         <th className='right'>EUR</th>
                         <th className='right'>PLN</th>
                         <th></th>
