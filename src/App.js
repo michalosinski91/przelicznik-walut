@@ -8,7 +8,6 @@ import NewTransactionForm from './components/NewTransactionForm'
 import HighestAmountDisplay from './components/HighestAmountDisplay'
 import TotalAmountDisplay from './components/TotalAmountDisplay'
 import TransactionList from './components/TransactionList'
-import { parse } from 'url'
 
 const App = ({ transactions, addTransaction, removeTransaction }) => {
     const [euroExchangeRate, setEuroExchangeRate] = useState(4.27)
@@ -58,7 +57,10 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
         <div>
             <Header />
             <div className='wrapper'>
-                <ExchangeRateForm />
+                <ExchangeRateForm 
+                    euroExchangeRate={euroExchangeRate}
+                    setEuroExchangeRate={setEuroExchangeRate}
+                />
                 <NewTransactionForm 
                     handleAddTransaction={handleAddTransaction} 
                 />
@@ -76,12 +78,6 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
                     euroAmount={maxAmountEUR.euroAmount} 
                     plnAmount={maxAmountPLN} 
                 />
-            </div>
-            <div>
-                <form onSubmit={event => handleUpdateExchangeRate(event)}>
-                    <label>Kurs wymiany</label>
-                    <input type="number" step="0.01" name="exchangeRate" value={euroExchangeRate} onChange={({target}) => setEuroExchangeRate(target.value)} />
-                </form>
             </div>
             {errorMessage
             ? <p>{errorMessage}</p>

@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const ExchangeRateForm = () => {
-    const [euroExchangeRate, setEuroExchangeRate] = useState(4.27)
+const ExchangeRateForm = ({ euroExchangeRate, setEuroExchangeRate }) => {
 
     return(
         <div className='container'>
