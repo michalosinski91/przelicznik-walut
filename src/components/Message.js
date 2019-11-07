@@ -5,7 +5,7 @@ const Message = ({ successMessage, errorMessage }) => {
     if (errorMessage) {
         return (
             <div className='message negative'>
-                {errorMessage}
+                <p>{errorMessage}</p>
             </div>
         )
     }
@@ -13,7 +13,7 @@ const Message = ({ successMessage, errorMessage }) => {
     if (successMessage) {
         return(
             <div className='message positive'>
-                {successMessage}
+                <p>{successMessage}</p>
             </div>
         )
     }
