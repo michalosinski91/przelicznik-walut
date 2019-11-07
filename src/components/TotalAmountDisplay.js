@@ -2,7 +2,7 @@ import React from 'react'
 
 const TotalAmountDisplay = ({ totalAmountEUR, totalAmountPLN }) => {
     return(
-        <div className='container'>
+        <div>
             <h3>Suma transakcji:</h3>
             {`${totalAmountEUR} euro / ${totalAmountPLN} złotych`}
         </div>

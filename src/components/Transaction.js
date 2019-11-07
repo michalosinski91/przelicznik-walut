@@ -5,7 +5,7 @@ const Transaction = ({ transaction, removeTransaction, euroExchangeRate }) => {
         removeTransaction(transaction.id)
     }
     return (
-        <div className='container'>
+        <div>
             {`${transaction.description} - ${transaction.euroAmount} euro = ${(transaction.euroAmount*euroExchangeRate).toFixed(2)} złotych`}
             <button className='button negative' onClick={handleRemoveTransaction}>Usuń</button>
         </div>
