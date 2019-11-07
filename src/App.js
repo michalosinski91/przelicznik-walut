@@ -17,7 +17,7 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
 
     const maxAmountEUR = transactions.reduce((prev, current) => (prev.euroAmount > current.euroAmount) ? prev : current, 1)
     const maxAmountPLN = (maxAmountEUR.euroAmount*euroExchangeRate).toFixed(2)
-    const totalAmountEUR = transactions.reduce((acc, current) => (acc + current.euroAmount), 0)
+    const totalAmountEUR = (transactions.reduce((acc, current) => (acc + current.euroAmount), 0)).toFixed(2)
     const totalAmountPLN = (transactions.reduce((acc, current) => (acc + current.euroAmount*euroExchangeRate), 0)).toFixed(2)
 
     const handleAddTransaction = (event, description, euroAmount, callback) => {
