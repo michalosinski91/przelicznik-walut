@@ -1,18 +1,19 @@
 import React from 'react'
-import Transaction from './Transaction'
 import Row from './Row'
 
 const TransactionList = ({ transactions, removeTransaction, euroExchangeRate }) => {
     return(
         <div className='container large'>
             <h3>Lista Transakcji</h3>
-            <table>
+            {!transactions.length
+            ? <p>Brak transakcji</p>
+            : <table className='table'>
                 <tbody>
                     <tr>
-                        <th>ID</th>
+                        <th className='left'>ID</th>
                         <th>Nazwa</th>
-                        <th>EUR</th>
-                        <th>PLN</th>
+                        <th className='right'>EUR</th>
+                        <th className='right'>PLN</th>
                         <th></th>
                     </tr>
                     {transactions.map(transaction => <Row 
@@ -23,6 +24,7 @@ const TransactionList = ({ transactions, removeTransaction, euroExchangeRate }) 
                     />)}
                 </tbody>
             </table>
+            }
         </div>
     )
 }

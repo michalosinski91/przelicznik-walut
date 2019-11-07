@@ -1,5 +1,6 @@
 const initialState = [
     { id: 0, description: 'dummy', euroAmount: 2 },
+    { id: 11, description: 'Another transaction', euroAmount: 10 },
 ]
 
 const reducer = (state = initialState, action) => {

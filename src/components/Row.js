@@ -9,10 +9,10 @@ const Row = ({ transaction, removeTransaction, euroExchangeRate }) => {
 
     return(
         <tr key={transaction.id}>
-            <td>{transaction.id}</td>
+            <td className='left'>{transaction.id}</td>
             <td>{transaction.description}</td>
-            <td>{transaction.euroAmount.toFixed(2)}</td>
-            <td>{plnAmount}</td>
+            <td className='right'>{transaction.euroAmount.toFixed(2)}</td>
+            <td className='right'>{plnAmount}</td>
             <td><button className='button negative' onClick={handleRemoveTransaction}>Usuń</button></td>
         </tr>
     )

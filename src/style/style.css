@@ -90,6 +90,23 @@ header {
     }
 }
 
+/* Table */
+
+.table {
+    width: 100%;
+    padding: 12px;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+
+
 /* Form  */
 
 .form input {
