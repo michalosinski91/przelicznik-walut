@@ -4,7 +4,7 @@ import TotalAmountDisplay from './TotalAmountDisplay'
 
 const Aside = ({ totalAmountEUR, totalAmountPLN, description, euroAmount, plnAmount }) => {
     return (
-        <div className='container'>
+        <div className='container aside'>
             <TotalAmountDisplay 
                 totalAmountEUR={totalAmountEUR} 
                 totalAmountPLN={totalAmountPLN}

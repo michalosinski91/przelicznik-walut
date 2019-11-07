@@ -3,7 +3,7 @@ import React from 'react'
 const ExchangeRateForm = ({ euroExchangeRate, setEuroExchangeRate }) => {
 
     return(
-        <div className='container small'>
+        <div className='container'>
             <h3>Kurs</h3>
             <form className='form'>
                 1 Euro =

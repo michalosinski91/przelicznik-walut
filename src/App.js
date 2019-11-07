@@ -67,7 +67,7 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
                     />
                 </div>
                 <div className='container-flex'>
-                    <Aside 
+                    <Aside
                         totalAmountEUR={totalAmountEUR} 
                         totalAmountPLN={totalAmountPLN}
                         description={maxAmountEUR.description} 
