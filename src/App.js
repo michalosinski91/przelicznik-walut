@@ -8,6 +8,7 @@ import NewTransactionForm from './components/NewTransactionForm'
 import HighestAmountDisplay from './components/HighestAmountDisplay'
 import TotalAmountDisplay from './components/TotalAmountDisplay'
 import TransactionList from './components/TransactionList'
+import Message from './components/Message'
 
 const App = ({ transactions, addTransaction, removeTransaction }) => {
     const [euroExchangeRate, setEuroExchangeRate] = useState(4.27)
@@ -78,15 +79,8 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
                     euroAmount={maxAmountEUR.euroAmount} 
                     plnAmount={maxAmountPLN} 
                 />
+                <Message errorMessage={errorMessage} successMessage={successMessage} />
             </div>
-            {errorMessage
-            ? <p>{errorMessage}</p>
-            : null
-            }
-            {successMessage
-            ? <p>{successMessage}</p>
-            : null
-            }
         </div>
     )
 }
