@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -67,7 +68,8 @@ header {
     text-align: center;
     color: #2626A3;
     background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     margin: 12px;
     padding: 24px 0;
 }
@@ -75,37 +77,59 @@ header {
 .container-flex {
     width: 95%;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 
 
 .aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
 }
 
 @media (min-width: 1100px) {
     .container-flex {
-        flex-direction: row-reverse;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
     }
 
     .container.large {
-        flex-basis: 200%;
+        -ms-flex-preferred-size: 200%;
+            flex-basis: 200%;
     }
 
     .small {
         height: 100px;
     }
     .aside {
-        flex-direction: column;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         max-height: 200px; 
     }
     .aside-item {
-        margin-top: 24px;
+        margin-bottom: 24px;
     }
 }
 
@@ -148,9 +172,16 @@ tr:hover {
 .input-container {
     width: 400px;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .form-field {
@@ -206,14 +237,19 @@ input[type=number] {
     text-decoration: none;
     border: transparent;
     border-radius: 16px;
-    box-shadow: 0px 2px 2px 0px #a3a3a3;
-    user-select: none;
+    -webkit-box-shadow: 0px 2px 2px 0px #a3a3a3;
+            box-shadow: 0px 2px 2px 0px #a3a3a3;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .button:active {
     position: relative;
     top: 2px;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 .button.positive {
@@ -242,10 +278,13 @@ input[type=number] {
     top: 25%;
     left: 50%;
     width: 400px;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     height: 75px;
     border-radius: 16px;
-    animation: fadeIn 5s linear ;
+    -webkit-animation: fadeIn 5s linear forwards;
+            animation: fadeIn 5s linear forwards;
 }
 
 .message p {
@@ -263,6 +302,15 @@ input[type=number] {
 .message.negative {
     background-color: rgba(181, 9, 12, 0.85);
     border: 2px solid rgb(114, 7, 8);
+}
+
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    25% {opacity: 1}
+    50% {opacity: 1}
+    75% {opacity: 1}
+    100% {opacity: 0}
 }
 
 

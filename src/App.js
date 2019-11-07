@@ -29,7 +29,7 @@ const App = ({ transactions, addTransaction, removeTransaction }) => {
             }, 5000)
             return
         }
-        if (!euroAmount || typeof(euroAmount) != "number") {
+        if (!euroAmount) {
             setErrorMessage('Proszę podać kwotę Euro')
             setTimeout(() => {
                 setErrorMessage('')
